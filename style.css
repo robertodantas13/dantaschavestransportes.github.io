@@ -8,7 +8,7 @@ body {
     background: #fff8f0;
 }
 header {
-    background: #ffe6cc;
+    background: #ff9933;
     color: white;
     padding: 40px 20px;
     text-align: center;
@@ -42,10 +42,10 @@ li {
     margin-bottom: 10px;
 }
 a {
-    color: #ffe6cc;
+    color: #ff9933;
 }
 .logo {
-    max-width: 300px;
+    max-width: 390px;
     display: block;
     margin: 0 auto 20px auto;
 }
@@ -59,33 +59,26 @@ a {
         font-size: 16px;
         padding: 0;
     }
-
     header {
         padding: 30px 10px;
     }
-
     .logo {
-        max-width: 120px;
+        max-width: 270px;
     }
-
     .caminhao {
         margin-top: 15px;
         border-radius: 8px;
     }
-
     section {
         margin: 15px 10px;
         padding: 15px;
     }
-
     h1 {
         font-size: 24px;
     }
-
     h2 {
         font-size: 20px;
     }
-
     .botao-whatsapp {
         padding: 10px 16px;
         font-size: 16px;
