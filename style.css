@@ -8,7 +8,7 @@ body {
     background: #fff8f0;
 }
 header {
-    background: #ff6600;
+    background: #ffe6cc;
     color: white;
     padding: 40px 20px;
     text-align: center;
@@ -42,7 +42,7 @@ li {
     margin-bottom: 10px;
 }
 a {
-    color: #ff6600;
+    color: #ffe6cc;
 }
 .logo {
     max-width: 180px;
