@@ -1,48 +1,82 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Dantas Chaves Transportes</title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dantas Chaves Transportes</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <img src="logo.jpeg" alt="Logo Dantas Chaves Transportes" class="logo" />
-        <p>Atendemos todo o Brasil com qualidade e segurança no transporte rodoviário</p>
-        <a href="https://wa.me/5577981117382" class="botao-whatsapp" target="_blank">Pedir Orçamento via WhatsApp</a>
-        <img src="caminhao.jpeg" alt="Caminhão da Dantas Chaves Transportes" class="caminhao" />
-    </header>
 
-    <section>
-        <h2>Quem Somos</h2>
-        <p>Com atuação em todo o território nacional, a Dantas Chaves Transportes é especialista em transporte rodoviário de cargas fracionadas e completas. Contamos com frota moderna, equipe experiente e compromisso com a excelência logística.</p>
-    </section>
+  <header>
+    <div class="container" style="text-align: center;">
+      <img src="logo.png" alt="Logo" class="logo">
+    </div>
+  </header>
 
-    <section>
-        <h2>Nossos Serviços</h2>
+  <nav>
+    <a href="#servicos">Nossos Serviços</a>
+    <a href="#sobre">Sobre Nós</a>
+    <a href="#contato" class="btn">Solicite um Orçamento</a>
+  </nav>
+
+  <section class="hero">
+    <div class="texto">
+      <h1>Soluções ágeis em transportes</h1>
+      <p>Transporte rodoviário de cargas fracionadas e inteiras para todo o Brasil</p>
+      <a href="https://wa.me/5577981117382" class="btn" target="_blank">Solicitar Orçamento</a>
+    </div>
+    <img src="caminhao.jpg" alt="Caminhão" class="hero-img" />
+  </section>
+
+  <section class="destaque" id="servicos">
+    <div class="container">
+      <h2>Nossos Serviços</h2>
+      <div class="cards">
+        <div class="card">Carga Fracionada</div>
+        <div class="card">Carga Completa</div>
+        <div class="card">Transporte Rodoviário</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sobre" id="sobre">
+    <div class="container">
+      <div>
+        <h2>Sobre a Dantas Chaves</h2>
+        <p>Atendemos todo o Brasil com excelência em transporte rodoviário. Temos uma frota moderna, motoristas experientes e oferecemos:</p>
         <ul>
-            <li>Transporte de carga fracionada</li>
-            <li>Transporte de carga completa</li>
-            <li>Serviço rodoviário em todo o Brasil</li>
+          <li>Seguro incluso</li>
+          <li>Rastreamento via satélite</li>
+          <li>Agilidade na entrega</li>
+          <li>Frota própria</li>
         </ul>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <section>
-        <h2>Diferenciais</h2>
-        <ul>
-            <li>🚚 Frota própria e moderna</li>
-            <li>🛰️ Rastreamento via satélite</li>
-            <li>🔒 Seguro incluso</li>
-            <li>⏱️ Agilidade nas entregas</li>
-            <li>👨‍✈️ Motoristas altamente experientes</li>
-        </ul>
-    </section>
+  <section class="formulario" id="contato">
+    <div class="container">
+      <h2>Solicite um Orçamento</h2>
+      <form action="https://formspree.io/f/{seu_codigo}" method="POST">
+        <input type="text" name="nome" placeholder="Seu nome" required />
+        <input type="email" name="email" placeholder="Seu e-mail" required />
+        <input type="text" name="telefone" placeholder="Seu telefone" />
+        <textarea name="mensagem" rows="4" placeholder="Descreva sua necessidade"></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+  </section>
 
-    <footer>
-        <p>Instagram: <a href="https://instagram.com/dctransportess_" target="_blank">@dctransportess_</a></p>
-        <p>© 2025 Dantas Chaves Transportes. Todos os direitos reservados.</p>
-    </footer>
+  <footer>
+    <p>© 2025 Dantas Chaves Transportes</p>
+    <p>
+      <a href="https://www.instagram.com/dctransportess_/" style="color: white; text-decoration: underline;" target="_blank">
+        @dctransportess_
+      </a> • WhatsApp: <a href="https://wa.me/5577981117382" style="color: white; text-decoration: underline;" target="_blank">(77) 98111-7382</a>
+    </p>
+  </footer>
+
 </body>
 </html>

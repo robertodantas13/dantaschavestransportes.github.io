@@ -1,86 +1,201 @@
-
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    color: #333;
-    background: #fff8f0;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #fff;
+  color: #333;
 }
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
 header {
-    background: #ff9933;
-    color: white;
-    padding: 40px 20px;
-    text-align: center;
+  background-color: #ff914d;
+  padding: 15px 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  width: 100%;
 }
-.botao-whatsapp {
-    display: inline-block;
-    background: #25D366;
-    color: white;
-    padding: 12px 20px;
-    border-radius: 6px;
-    text-decoration: none;
-    margin-top: 20px;
-}
-section {
-    padding: 20px;
-    background: white;
-    margin: 20px;
-    border-radius: 10px;
-}
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #ffe6cc;
-    margin-top: 40px;
-}
-ul {
-    list-style: none;
-    padding-left: 0;
-}
-li {
-    margin-bottom: 10px;
-}
-a {
-    color: #ff9933;
-}
+
 .logo {
-    max-width: 390px;
-    display: block;
-    margin: 0 auto 20px auto;
+  height: 400px;
+  display: block;
+  margin: 0 auto;
 }
-.caminhao {
-    max-width: 100%;
-    margin-top: 20px;
-    border-radius: 12px;
+
+nav {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px 0;
+  background-color: #ff914d; /* para garantir o fundo laranja */
 }
-@media (max-width: 768px) {
-    body {
-        font-size: 16px;
-        padding: 0;
-    }
-    header {
-        padding: 30px 10px;
-    }
-    .logo {
-        max-width: 270px;
-    }
-    .caminhao {
-        margin-top: 15px;
-        border-radius: 8px;
-    }
-    section {
-        margin: 15px 10px;
-        padding: 15px;
-    }
-    h1 {
-        font-size: 24px;
-    }
-    h2 {
-        font-size: 20px;
-    }
-    .botao-whatsapp {
-        padding: 10px 16px;
-        font-size: 16px;
-    }
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+nav .btn {
+  background-color: white;
+  color: #ff914d;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav .btn:hover {
+  background-color: #e67c39;
+  color: white;
+}
+
+/* resto do CSS permanece igual */
+
+.hero {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+  text-align: center;
+  background: #ffe8d9;
+}
+
+.hero .texto h1 {
+  font-size: 2.2em;
+  margin-bottom: 10px;
+}
+
+.hero .texto p {
+  font-size: 1.1em;
+  margin-bottom: 20px;
+}
+
+.hero .btn {
+  background-color: #ff914d;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 1em;
+}
+
+.hero-img {
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 20px;
+}
+
+.destaque {
+  background-color: #fef6f1;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.destaque h2 {
+  font-size: 2em;
+  margin-bottom: 30px;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.sobre {
+  padding: 60px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sobre ul {
+  padding-left: 20px;
+  list-style: disc;
+}
+
+.formulario {
+  background-color: #fff3e8;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.formulario form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.formulario input,
+.formulario textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1em;
+}
+
+.formulario button {
+  background-color: #ff914d;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+footer {
+  background-color: #ff914d;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .cards {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  nav {
+    justify-content: center;
+  }
+
+  .sobre {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .sobre div {
+    flex: 1;
+  }
 }
