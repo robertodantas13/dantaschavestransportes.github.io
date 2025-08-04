@@ -2,32 +2,431 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dantas Chaves Transportes</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    /* Seu CSS original */
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #fff;
+      color: #333;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 0;
+    }
+
+    header {
+      background-color: #ff914d;
+      padding: 15px 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      width: 100%;
+    }
+
+    .logo {
+      height: 120px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 10px 0;
+      background-color: #ff914d;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    nav .btn {
+      background-color: white;
+      color: #ff914d;
+      padding: 8px 16px;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    nav .btn:hover {
+      background-color: #e67c39;
+      color: white;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 0;
+      text-align: center;
+      background: #ffe8d9;
+    }
+
+    .hero .texto h1 {
+      font-size: 2.2em;
+      margin-bottom: 10px;
+    }
+
+    .hero .texto p {
+      font-size: 1.1em;
+      margin-bottom: 20px;
+    }
+
+    .hero .btn {
+      background-color: #ff914d;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 1em;
+    }
+
+    .hero-img {
+      width: 100%;
+      max-width: 500px;
+      margin-bottom: 20px;
+    }
+
+    .destaque {
+      background-color: #fef6f1;
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    .destaque h2 {
+      font-size: 2em;
+      margin-bottom: 30px;
+    }
+
+    .cards {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .card {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    .sobre {
+      padding: 60px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .sobre ul {
+      padding-left: 20px;
+      list-style: disc;
+    }
+
+    .formulario {
+      background-color: #fff3e8;
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    .formulario form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .formulario input,
+    .formulario textarea {
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1em;
+    }
+
+    .formulario button {
+      background-color: #ff914d;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 6px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+
+    footer {
+      background-color: #ff914d;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    @media (min-width: 768px) {
+      .hero {
+        flex-direction: row;
+        text-align: left;
+      }
+
+      .cards {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      nav {
+        justify-content: center;
+      }
+
+      .sobre {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .sobre div {
+        flex: 1;
+      }
+
+      .contato-info .container {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+      }
+
+      .bloco-contato {
+        flex: 1;
+      }
+    }
+
+    /* Botão flutuante do WhatsApp */
+    .whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: transparent;
+      z-index: 1000;
+    }
+
+    .whatsapp-button .whatsapp-icon {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    /* Missão, Visão e Valores */
+    .mvv {
+      background-color: #fef6f1;
+      padding: 60px 0;
+    }
+
+    .mvv h2 {
+      text-align: center;
+      font-size: 2em;
+      margin-bottom: 40px;
+    }
+
+    .mvv-bloco {
+      margin-bottom: 40px;
+    }
+
+    .mvv-bloco h3 {
+      color: #ff914d;
+      font-size: 1.6em;
+      margin-bottom: 10px;
+    }
+
+    .mvv-bloco p,
+    .mvv-bloco ul {
+      font-size: 1.05em;
+      line-height: 1.6;
+    }
+
+    .mvv-bloco ul {
+      padding-left: 20px;
+      list-style: disc;
+    }
+
+    /* Contato e Endereço */
+    .contato-info {
+      background-color: #f9f4ef;
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    .contato-info .container {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .bloco-contato h3 {
+      color: #ff914d;
+      font-size: 1.5em;
+      margin-bottom: 10px;
+    }
+
+    .bloco-contato p {
+      margin: 5px 0;
+      font-size: 1.05em;
+    }
+
+    .bloco-contato a {
+      color: #333;
+      text-decoration: underline;
+    }
+
+    @media (min-width: 768px) {
+      .contato-info .container {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+      }
+
+      .bloco-contato {
+        flex: 1;
+      }
+    }
+
+    .instagram-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: white;
+      text-decoration: underline;
+      font-weight: 600;
+    }
+
+    .instagram-icon {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+    }
+
+    /* Nova seção Nossa Frota */
+
+    .nossa-frota {
+      padding: 60px 0;
+      background-color: #fef6f1;
+    }
+
+    .nossa-frota .container {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .frota-texto {
+      flex: 1;
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    .frota-carrossel {
+      flex: 1;
+      position: relative;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .carousel-container {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    .carousel-image {
+      width: 100%;
+      display: none;
+      object-fit: cover;
+    }
+
+    .carousel-image.active {
+      display: block;
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      background-color: rgba(255, 145, 77, 0.7);
+      border: none;
+      color: white;
+      font-size: 2em;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 50%;
+      user-select: none;
+      transform: translateY(-50%);
+      transition: background-color 0.3s ease;
+      z-index: 10;
+    }
+
+    .carousel-btn:hover {
+      background-color: #ff914d;
+    }
+
+    .carousel-btn.prev {
+      left: 10px;
+    }
+
+    .carousel-btn.next {
+      right: 10px;
+    }
+
+    @media (min-width: 768px) {
+      .nossa-frota .container {
+        flex-direction: row;
+        align-items: center;
+        gap: 60px;
+      }
+    }
+  </style>
 </head>
 <body>
 
   <header>
     <div class="container" style="text-align: center;">
-      <img src="logo.png" alt="Logo" class="logo">
+      <img src="logo.png" alt="Logo Dantas Chaves Transportes" class="logo" />
     </div>
   </header>
 
   <nav>
     <a href="#servicos">Nossos Serviços</a>
     <a href="#sobre">Sobre Nós</a>
+    <a href="#frota">Nossa Frota</a>
     <a href="#contato" class="btn">Solicite um Orçamento</a>
   </nav>
 
-  <section class="hero">
+  <section class="hero" aria-label="Apresentação principal">
     <div class="texto">
-      <h1>Soluções ágeis em transportes</h1>
-      <p>Transporte rodoviário de cargas fracionadas e inteiras para todo o Brasil</p>
-      <a href="https://wa.me/5577981117382" class="btn" target="_blank">Solicitar Orçamento</a>
+      <h1>ESPECIALISTAS EM TRANSPORTES!</h1>
+      <p>Soluções ágeis em transportes rodoviários de cargas para todo o Brasil</p>
     </div>
-    <img src="caminhao.jpg" alt="Caminhão" class="hero-img" />
   </section>
 
   <section class="destaque" id="servicos">
@@ -35,8 +434,8 @@
       <h2>Nossos Serviços</h2>
       <div class="cards">
         <div class="card">Carga Fracionada</div>
-        <div class="card">Carga Completa</div>
-        <div class="card">Transporte Rodoviário</div>
+        <div class="card">Carga Dedicada</div>
+        <div class="card">Armazenamento e Preparação</div>
       </div>
     </div>
   </section>
@@ -56,27 +455,99 @@
     </div>
   </section>
 
-  <section class="formulario" id="contato">
+  <!-- Seção Nossa Frota -->
+  <section class="nossa-frota" id="frota" aria-label="Nossa Frota">
+    <div class="container">
+      <div class="frota-texto">
+        <h2>Nossa Frota</h2>
+        <p>
+          Nossa frota é própria e é composta por cavalos mecânicos e carretas, com idade média de 5 anos e trabalhamos apenas com implementos do tipo Sider, pela sua versatilidade. Atualmente possuímos perfis diferentes de implementos como Rodotrem 12,5m + 12,5m, carreta e carreta LS 3 eixos com capacidade para 26, 28 e 30 paletes e peso máximo de até 50 toneladas de carga.
+        </p>
+        <p>
+          Vale destacar que possuímos implementos com uma maior capacidade, com o intuito de otimizar a carga das carretas. Além disso, estamos em constante renovação de nossa frota movida a diesel, pelas novas gerações das diversas marcas que propiciam uma economia de combustível de até 20% em relação a geração anterior, firmando nosso compromisso com o meio ambiente.
+        </p>
+      </div>
+      <div class="frota-carrossel">
+        <div class="carousel-container">
+          <img src="frota1.jpg" alt="Caminhão da frota Dantas Chaves" class="carousel-image active" />
+          <img src="frota2.jpg" alt="Carreta Sider da frota" class="carousel-image" />
+          <img src="frota3.jpg" alt="Implementos Sider da frota" class="carousel-image" />
+          <img src="frota4.jpg" alt="Implementos Sider da frota1" class="carousel-image" />
+
+          <!-- Adicione mais imagens se desejar -->
+          <button class="carousel-btn prev" aria-label="Imagem anterior">&#10094;</button>
+          <button class="carousel-btn next" aria-label="Próxima imagem">&#10095;</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mvv" aria-label="Missão, Visão e Valores">
+    <div class="container">
+      <h2>Missão, Visão e Valores</h2>
+
+      <div class="mvv-bloco">
+        <h3>Missão</h3>
+        <p>Nossa missão é proporcionar soluções logísticas inovadoras e eficientes que garantam a tranquilidade dos nossos clientes. Comprometemo-nos a oferecer informações precisas e acessíveis em tempo real, melhorando continuamente nossos processos através da tecnologia.</p>
+      </div>
+
+      <div class="mvv-bloco">
+        <h3>Visão</h3>
+        <p>Ser reconhecida como líder em logística no Brasil até 2030, oferecendo não apenas serviços de transporte, mas também a segurança e a confiabilidade que vêm de parcerias estratégicas com seguradoras renomadas e o uso de tecnologias de ponta.</p>
+      </div>
+
+      <div class="mvv-bloco">
+        <h3>Valores</h3>
+        <ul>
+          <li><strong>Segurança:</strong> Assegurar que todas as cargas estejam protegidas por seguros robustos, através de parcerias com seguradoras de prestígio.</li>
+          <li><strong>Transparência:</strong> Manter nossos clientes informados com atualizações em tempo real sobre o status de suas cargas.</li>
+          <li><strong>Inovação:</strong> Utilizar software especializado para otimizar todas as fases do transporte e logística.</li>
+          <li><strong>Integridade e Ética:</strong> Operar com responsabilidade e honestidade, garantindo a integridade de todas as informações e serviços.</li>
+          <li><strong>Excelência:</strong> Superar as expectativas através de serviços excepcionais e precisão infalível.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="formulario" id="contato" aria-label="Formulário de contato">
     <div class="container">
       <h2>Solicite um Orçamento</h2>
       <form action="https://formspree.io/f/{seu_codigo}" method="POST">
         <input type="text" name="nome" placeholder="Seu nome" required />
         <input type="email" name="email" placeholder="Seu e-mail" required />
-        <input type="text" name="telefone" placeholder="Seu telefone" />
+        <input type="tel" name="telefone" placeholder="Seu telefone" />
         <textarea name="mensagem" rows="4" placeholder="Descreva sua necessidade"></textarea>
         <button type="submit">Enviar</button>
       </form>
     </div>
   </section>
 
+  <section class="contato-info" aria-label="Informações de contato e endereço">
+    <div class="container">
+      <div class="bloco-contato">
+        <h3>Contato</h3>
+        <p>Contate-nos para mais informações.</p>
+        <p><strong>Email:</strong> <a href="mailto:contato@dantaschavestransportes.com.br">contato@dantaschavestransportes.com.br</a></p>
+        <p><strong>Telefone:</strong> <a href="tel:+5577981117382">(77) 98111-7382</a></p>
+      </div>
+
+      <div class="bloco-contato">
+        <h3>Endereço</h3>
+        <p><strong>Matriz:</strong></p>
+        <p>Av. Juscelino Kubitscheck, SN</p>
+        <p>Poções - BA, 45260-000</p>
+      </div>
+    </div>
+  </section>
+
   <footer>
     <p>© 2025 Dantas Chaves Transportes</p>
     <p>
-      <a href="https://www.instagram.com/dctransportess_/" style="color: white; text-decoration: underline;" target="_blank">
+      <a href="https://www.instagram.com/dctransportess_/" class="instagram-link" target="_blank" rel="noopener noreferrer">
+        <img src="icons8-instagram-50.png" alt="Instagram Dantas Chaves Transportes" class="instagram-icon" />
         @dctransportess_
-      </a> • WhatsApp: <a href="https://wa.me/5577981117382" style="color: white; text-decoration: underline;" target="_blank">(77) 98111-7382</a>
+      </a>
     </p>
   </footer>
 
-</body>
-</html>
+  <!-- Botão flutu

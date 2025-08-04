@@ -20,7 +20,7 @@ header {
 }
 
 .logo {
-  height: 400px;
+  height: 120px;
   display: block;
   margin: 0 auto;
 }
@@ -32,7 +32,7 @@ nav {
   align-items: center;
   flex-wrap: wrap;
   padding: 10px 0;
-  background-color: #ff914d; /* para garantir o fundo laranja */
+  background-color: #ff914d;
 }
 
 nav a {
@@ -61,8 +61,6 @@ nav .btn:hover {
   background-color: #e67c39;
   color: white;
 }
-
-/* resto do CSS permanece igual */
 
 .hero {
   display: flex;
@@ -198,4 +196,113 @@ footer {
   .sobre div {
     flex: 1;
   }
+}
+
+/* Botão flutuante do WhatsApp */
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: transparent;
+  z-index: 1000;
+}
+
+.whatsapp-button .whatsapp-icon {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Missão, Visão e Valores */
+.mvv {
+  background-color: #fef6f1;
+  padding: 60px 0;
+}
+
+.mvv h2 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 40px;
+}
+
+.mvv-bloco {
+  margin-bottom: 40px;
+}
+
+.mvv-bloco h3 {
+  color: #ff914d;
+  font-size: 1.6em;
+  margin-bottom: 10px;
+}
+
+.mvv-bloco p,
+.mvv-bloco ul {
+  font-size: 1.05em;
+  line-height: 1.6;
+}
+
+.mvv-bloco ul {
+  padding-left: 20px;
+  list-style: disc;
+}
+
+/* Contato e Endereço */
+.contato-info {
+  background-color: #f9f4ef;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.contato-info .container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.bloco-contato h3 {
+  color: #ff914d;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.bloco-contato p {
+  margin: 5px 0;
+  font-size: 1.05em;
+}
+
+.bloco-contato a {
+  color: #333;
+  text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+  .contato-info .container {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  .bloco-contato {
+    flex: 1;
+  }
+
+}
+.instagram-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.instagram-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
 }
